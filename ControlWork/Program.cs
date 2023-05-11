@@ -41,3 +41,32 @@ System.Console.Write("[");
 System.Console.Write(string.Join(", ", array));
 System.Console.WriteLine("]");
 
+string[] arrayV1 = new string[array.Length];
+
+string NewArray(string[] array, string[] arrayV1)
+{
+    int n =0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            arrayV1[n] = array[i];
+            n++;
+        }
+    }
+    return arrayV1[n];
+}
+
+void Print(string[] arrayV1)
+{
+    System.Console.Write("[ ");
+    for (int i = 0; i < arrayV1.Length; i++)
+    {
+        System.Console.Write(arrayV1[i]+ ", ");
+    }
+    System.Console.WriteLine("]");
+}
+
+NewArray(array, arrayV1);
+System.Console.WriteLine("\nНовый массив из строк, длина которых меньше, либо равна 3 символам.");
+Print(arrayV1);
